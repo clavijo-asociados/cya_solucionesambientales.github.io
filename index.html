@@ -237,7 +237,38 @@
     transform: translateX(-16%);
   }
 }
+/* --- HERO: limpiar la "caja" detrás del video --- */
+.media-card{
+  padding: 0;                 /* quita el espacio alrededor del video */
+  background: transparent;    /* sin fondo para que no se vea la caja */
+  box-shadow: none;           /* sin sombra del contenedor */
+  border-radius: 0;           /* el radio lo pondremos en el propio video */
+  overflow: hidden;           /* por si el video sobresale */
+}
 
+/* --- VIDEO: proporción correcta y estilo --- */
+.hero-video{
+  width: 100%;                /* ocupa todo el ancho de su columna */
+  height: auto;               /* mantiene proporción original del mp4/poster */
+  display: block;
+  object-fit: cover;          /* recorta elegante si falta alto */
+  object-position: center;
+  border-radius: 20px;        /* borde redondeado en el video, no en la caja */
+  box-shadow: 0 10px 30px rgba(37,99,235,.15);
+}
+
+/* --- Desktop: hazlo más grande cambiando la proporción del grid, no el video --- */
+@media (min-width: 1024px){
+  .container.hero-grid{
+    grid-template-columns: 0.9fr 1.1fr; /* da más espacio a la columna del video */
+  }
+  /* Opcional: limita altura máxima si el monitor es muy alto */
+  .hero-video{
+    max-height: 720px;        /* quita si quieres que crezca más */
+  }
+}
+
+    
   </style>
   <script type="application/ld+json">
   {
@@ -296,7 +327,7 @@
           <a class="btn btn-secondary" target="_blank" href="https://wa.me/593988125641?text=Hola%20C%26A%2C%20quisiera%20una%20evaluaci%C3%B3n%20inicial">💬 WhatsApp 24h</a>
         </div>
       </div>
-     <div class="media-card" aria-label="Imagen/Vídeo representativo">
+   <div class="media-card" aria-label="Imagen/Vídeo representativo">
   <video
     src="images/hero.mp4"
     poster="images/hero.jpg"
@@ -305,8 +336,9 @@
     loop
     playsinline
     class="hero-video"></video>
-  <div class="media-badge">Proyectos en campo • SIG • Cumplimiento</div>
+  <div class="media-badge">Desarrollo con Conciencia</div>
 </div>
+
 
     </div>
   </section>
@@ -761,6 +793,7 @@
   </script>
 </body>
 </html>
+
 
 
 
