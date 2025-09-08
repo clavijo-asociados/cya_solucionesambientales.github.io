@@ -199,10 +199,10 @@
       .team-banner.full-bleed .wide-photo{height:240px}
     }
 
-    /* Móvil / base: conserva tamaño automático actual */
+    /* --- HERO: video con proporción correcta --- */
 .hero-video{
   width: 100%;
-  height: auto;
+  height: auto;              /* mantiene proporción del mp4/poster */
   object-fit: cover;
   object-position: center;
   display: block;
@@ -210,35 +210,21 @@
   box-shadow: 0 10px 30px rgba(37,99,235,.15);
 }
 
-/* Evita scroll si lo hacemos más ancho que su contenedor */
-.media-card{ overflow: hidden; }
+/* La tarjeta conserva su estilo y bordes; evitamos desbordes */
+.media-card{
+  overflow: hidden;
+}
 
-/* Desktop: haz el video más grande */
+/* Desktop: agranda el área del video ajustando el grid (no el video) */
 @media (min-width: 1024px){
-  .hero-video{
-    width: 140%;          /* más ancho que su columna */
-    height: 640px;        /* más alto; ajusta a 700–760 si quieres */
-    object-fit: cover;
-    object-position: center;
-    transform: translateX(-14%); /* centra el exceso */
-  }
-
-  /* Opcional: da más ancho a la columna del video si usas grid 2 col */
   .container.hero-grid{
-    grid-template-columns: 0.85fr 1.15fr;
+    grid-template-columns: 0.9fr 1.1fr;   /* columna del video más ancha */
+  }
+  .hero-video{
+    max-height: 720px;       /* opcional: límite suave en monitores grandes */
   }
 }
 
-/* Monitores grandes (opcional) */
-@media (min-width: 1440px){
-  .hero-video{
-    width: 150%;
-    height: 720px;
-    transform: translateX(-16%);
-  }
-}
-/* Mantén la tarjeta original, solo garantizamos que no desborde */
-.media-card{ overflow: hidden; }
 
 
 /* --- VIDEO: proporción correcta y estilo --- */
@@ -788,6 +774,7 @@
   </script>
 </body>
 </html>
+
 
 
 
