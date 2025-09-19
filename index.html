@@ -249,6 +249,28 @@
   }
 }
 
+/* === TESTIMONIOS: optimizado para imágenes 551x368 (3:2) === */
+.tcard .testimonial-grid{
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 por fila (desktop) */
+  gap: 16px;
+}
+
+.tcard .testimonial-grid img{
+  width: 100%;
+  height: auto;       /* respeta el alto original */
+  aspect-ratio: auto; /* anula el 4/5 anterior */
+  object-fit: contain;/* no recorta; muestra completa la imagen */
+  background: #0f172a;/* relleno oscuro si sobran bandas */
+  border-radius: 12px;
+  border: 1px solid rgba(148,163,184,.25);
+}
+
+/* Móvil: 1 por fila */
+@media (max-width: 560px){
+  .tcard .testimonial-grid{ grid-template-columns: 1fr; }
+}
+
+    
     
   </style>
   <script type="application/ld+json">
@@ -779,6 +801,7 @@
   </script>
 </body>
 </html>
+
 
 
 
