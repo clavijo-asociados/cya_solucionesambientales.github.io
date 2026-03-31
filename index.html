@@ -4,164 +4,638 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>C&A - Clavijo y Asociados | Soluciones Ambientales Estratégicas</title>
-  <meta name="description" content="Consultoría ambiental estratégica con más de 15 años de experiencia: cumplimiento normativo, sostenibilidad y tecnología geoespacial. Cumplir, proteger y prosperar juntos." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta
+    name="description"
+    content="Consultoría ambiental estratégica con más de 15 años de experiencia: cumplimiento normativo, sostenibilidad y tecnología geoespacial. Soluciones confiables, bien sustentadas y orientadas a resultados."
+  />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   <meta property="og:title" content="C&A - Clavijo y Asociados" />
-  <meta property="og:description" content="Consultoría ambiental estratégica para convertir el cumplimiento en valor y solidez empresarial." />
+  <meta
+    property="og:description"
+    content="Consultoría ambiental estratégica para convertir el cumplimiento en valor, solidez y sostenibilidad empresarial."
+  />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="images/og-image.jpg" />
   <meta property="og:url" content="https://clavijoambiental.ec" />
   <link rel="icon" href="images/favicon.png" />
+
   <style>
     :root{
-      --blue:#0b63ff; /* botón/links */
-      --blue-600:#1e40af;
-      --green:#1db954; /* acento sostenible */
-      --green-600:#059669;
-      --amber:#f59e0b; /* dorado/ámbar premium */
-      --bg:#0a0f19; /* fondo hero oscuro para contraste */
-      --bg-2:#0a1422;
-      --surface:#0f172a;
-      --muted:#94a3b8;
-      --text:#e5e7eb;
+      --blue:#1158d8;
+      --blue-600:#0d47b5;
+      --blue-700:#0b3d96;
+      --green:#138d72;
+      --green-600:#0d6b56;
+      --amber:#d6a33a;
+      --amber-600:#b9871a;
+      --navy:#081221;
+      --navy-2:#0b172a;
+      --navy-3:#101d34;
+      --ink:#0f172a;
+      --ink-soft:#334155;
+      --muted:#64748b;
+      --muted-2:#94a3b8;
+      --line:#e5e7eb;
+      --line-soft:#edf2f7;
+      --bg:#ffffff;
+      --bg-soft:#f8fafc;
+      --bg-cream:#fcfcfb;
       --white:#ffffff;
-      --card:#111827;
-      --border:#233042;
-      --shadow:0 10px 35px rgba(2,6,23,.35);
+      --success:#ecfdf5;
+      --success-line:#bbf7d0;
+      --success-text:#065f46;
+      --shadow-soft:0 10px 28px rgba(15,23,42,.07);
+      --shadow-card:0 18px 44px rgba(2,6,23,.10);
+      --shadow-hero:0 26px 60px rgba(2,6,23,.28);
+      --radius:20px;
+      --radius-sm:14px;
+      --radius-lg:26px;
+      --header-h:86px;
+      --max:1220px;
+      --ease:cubic-bezier(.22,1,.36,1);
     }
+
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;background:#ffffff;color:#0f172a;}
-    img{max-width:100%;display:block}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      overflow-x:hidden;
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    img,video{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
-    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    button{font:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+    section{padding:72px 0;scroll-margin-top:calc(var(--header-h) + 18px)}
+
+    .section-head{
+      text-align:center;
+      margin-bottom:32px;
+    }
+    .title{
+      font-family:Montserrat,Inter,sans-serif;
+      font-size:40px;
+      line-height:1.08;
+      font-weight:800;
+      color:var(--ink);
+      letter-spacing:.1px;
+    }
+    .subtitle{
+      max-width:780px;
+      margin:12px auto 0;
+      color:#475569;
+      font-size:16px;
+      line-height:1.75;
+    }
+
+    .eyebrow-block{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(19,141,114,.10);
+      border:1px solid rgba(19,141,114,.22);
+      color:#b6f4df;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.18px;
+    }
+    .eyebrow-block::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:linear-gradient(135deg,#52d7ac,#1fb886);
+      box-shadow:0 0 0 6px rgba(31,184,134,.13);
+    }
 
     /* Header */
-    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid #e2e8f0}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:46px;height:46px;border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(15,23,42,.15);border:1px solid #e2e8f0}
-    .brand-name{font-family:Montserrat,Inter,sans-serif;font-weight:800;letter-spacing:.4px;background:linear-gradient(135deg,var(--blue),var(--green));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-size:18px}
-    .brand-sub{font-size:12px;color:#475569}
-    .nav-links{display:flex;gap:26px;align-items:center}
-    .nav-links a{font-weight:600;color:#334155}
+    header{
+      position:sticky;
+      top:0;
+      z-index:120;
+      background:rgba(255,255,255,.90);
+      backdrop-filter:saturate(1.22) blur(14px);
+      border-bottom:1px solid rgba(226,232,240,.9);
+      transition:box-shadow .25s ease, background .25s ease;
+    }
+    header.scrolled{
+      box-shadow:0 8px 28px rgba(15,23,42,.07);
+      background:rgba(255,255,255,.94);
+    }
+    .nav{
+      min-height:var(--header-h);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .logo{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid #e2e8f0;
+      background:#fff;
+      box-shadow:0 10px 24px rgba(15,23,42,.08);
+      flex:0 0 48px;
+    }
+    .brand-copy{min-width:0}
+    .brand-name{
+      font-family:Montserrat,Inter,sans-serif;
+      font-size:18px;
+      font-weight:800;
+      letter-spacing:.25px;
+      line-height:1.05;
+      white-space:nowrap;
+      background:linear-gradient(135deg,var(--blue),var(--green));
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .brand-sub{
+      font-size:12px;
+      color:#64748b;
+      margin-top:3px;
+      font-weight:500;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+    }
+    .nav-links a{
+      position:relative;
+      font-weight:600;
+      color:var(--ink-soft);
+      transition:color .2s ease;
+    }
+    .nav-links a:not(.cta-nav)::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-8px;
+      width:100%;
+      height:2px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--blue),var(--green));
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .28s var(--ease);
+    }
     .nav-links a:hover{color:var(--blue)}
-    .cta-nav{padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,var(--amber),#ffd166);color:#111827;font-weight:800;border:1px solid #fcd34d;box-shadow:0 8px 20px rgba(245, 158, 11,.25)}
+    .nav-links a:not(.cta-nav):hover::after{transform:scaleX(1)}
+    .cta-nav{
+      padding:11px 16px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--amber),#efc65c);
+      color:#111827;
+      font-weight:800;
+      border:1px solid #eac15a;
+      box-shadow:0 12px 24px rgba(214,163,58,.20);
+      transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;
+    }
+    .cta-nav:hover{
+      transform:translateY(-1px);
+      box-shadow:0 14px 28px rgba(214,163,58,.26);
+      filter:saturate(1.03);
+    }
+
+    .menu-toggle{
+      display:none;
+      width:46px;
+      height:46px;
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      background:#fff;
+      box-shadow:0 8px 18px rgba(15,23,42,.06);
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:5px;
+    }
+    .menu-toggle span{
+      width:18px;
+      height:2px;
+      background:var(--ink);
+      border-radius:999px;
+      transition:transform .22s ease, opacity .22s ease;
+    }
+    .menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .menu-toggle.open span:nth-child(2){opacity:0}
+    .menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    .mobile-menu{
+      display:none;
+      padding:0 24px 18px;
+    }
+    .mobile-menu.open{display:block}
+    .mobile-card{
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      padding:10px;
+      box-shadow:var(--shadow-soft);
+    }
+    .mobile-card a{
+      display:block;
+      padding:12px 14px;
+      border-radius:10px;
+      font-weight:600;
+      color:var(--ink-soft);
+    }
+    .mobile-card a:hover{background:#f8fafc}
+    .mobile-card .mobile-cta{
+      margin-top:8px;
+      background:linear-gradient(135deg,var(--amber),#efc65c);
+      color:#111827;
+      font-weight:800;
+      text-align:center;
+    }
 
     /* Hero */
-    .hero{position:relative;background:linear-gradient(180deg,var(--bg) 0%, var(--bg-2) 100%);color:var(--text);overflow:hidden}
-    /* Capa de imagen transparente de fondo */
-    .hero::before{content:"";position:absolute;inset:0;background-image:url('images/hero-overlay.png'); /* PNG con transparencia */background-size:cover;background-position:center;opacity:.35;/* controla transparencia */filter:contrast(1.1) saturate(1.05);pointer-events:none}
-    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;padding:90px 0}
-    .hero .eyebrow{display:inline-flex;gap:8px;align-items:center;background:rgba(29,185,84,.1);border:1px solid rgba(29,185,84,.25);color:#a7f3d0;padding:6px 10px;border-radius:999px;font-size:12px}
-    .h1{font-family:Montserrat,Inter,sans-serif;font-size:48px;line-height:1.08;margin:16px 0 14px;font-weight:800;letter-spacing:.2px}
-    .h1 .accent{color:#a5b4fc}
-    .hero p{color:#cbd5e1;font-size:18px}
-    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 10px}
-    .kpi{background:linear-gradient(180deg,#0b1220 0%,#0c1626 100%);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
-    .kpi strong{display:block;font-size:28px;letter-spacing:.5px;background:linear-gradient(135deg,#60a5fa,#34d399);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    .kpi span{font-size:12px;color:#94a3b8}
-    .cta-row{display:flex;gap:12px;margin-top:18px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border-radius:12px;font-weight:800;border:1px solid transparent;transition:transform .2s ease, box-shadow .2s ease}
+    .hero{
+      position:relative;
+      background:linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 100%);
+      color:#e5e7eb;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:url('images/hero-overlay.png');
+      background-size:cover;
+      background-position:center;
+      opacity:.24;
+      filter:contrast(1.03) saturate(1.02);
+      pointer-events:none;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-140px;
+      top:-140px;
+      width:420px;
+      height:420px;
+      border-radius:999px;
+      background:radial-gradient(circle at center, rgba(17,88,216,.20), transparent 65%);
+      pointer-events:none;
+    }
+    .hero-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:52px;
+      align-items:center;
+      padding:92px 0 82px;
+    }
+    .hero-copy{
+      max-width:700px;
+    }
+    .h1{
+      font-family:Montserrat,Inter,sans-serif;
+      font-size:54px;
+      line-height:1.01;
+      margin:18px 0 16px;
+      font-weight:800;
+      letter-spacing:.05px;
+      max-width:12ch;
+    }
+    .h1 .accent{
+      color:#d9e1ff;
+    }
+    .hero-copy p{
+      color:#cbd5e1;
+      font-size:18px;
+      line-height:1.76;
+      max-width:700px;
+    }
+
+    .kpis{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin:30px 0 10px;
+    }
+    .kpi{
+      position:relative;
+      background:linear-gradient(180deg,#0b1528 0%,#0d192f 100%);
+      border:1px solid rgba(148,163,184,.13);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 18px 34px rgba(2,6,23,.20);
+      overflow:hidden;
+    }
+    .kpi::before{
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:3px;
+      background:linear-gradient(180deg,var(--blue),var(--green));
+      opacity:.9;
+    }
+    .kpi strong{
+      display:block;
+      font-size:29px;
+      letter-spacing:.35px;
+      background:linear-gradient(135deg,#80b8ff,#47d2a4);
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .kpi span{
+      display:block;
+      font-size:12px;
+      color:#9eb0c6;
+      line-height:1.46;
+      margin-top:3px;
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 20px;
+      border-radius:12px;
+      font-weight:800;
+      border:1px solid transparent;
+      cursor:pointer;
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+    }
     .btn:hover{transform:translateY(-2px)}
-    .btn-primary{background:linear-gradient(135deg,var(--blue),#60a5fa);box-shadow:0 12px 30px rgba(59,130,246,.35);color:white}
-    .btn-secondary{background:transparent;border-color:#334155;color:#e2e8f0}
-    .media-card{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
-   .media-card img,.media-card video{width:100%;height:auto;object-fit:cover;display:block}
-    .media-badge{position:absolute;bottom:12px;left:12px;background:rgba(2,6,23,.7);color:#e2e8f0;padding:6px 10px;border-radius:999px;font-size:12px;border:1px solid rgba(148,163,184,.3)}
+    .btn-primary{
+      background:linear-gradient(135deg,var(--blue),#5a90ff);
+      color:#fff;
+      box-shadow:0 16px 30px rgba(17,88,216,.24);
+    }
+    .btn-primary:hover{
+      box-shadow:0 18px 34px rgba(17,88,216,.30);
+    }
+    .btn-secondary{
+      background:rgba(255,255,255,.03);
+      color:#e2e8f0;
+      border-color:#334155;
+    }
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.05);
+      border-color:#475569;
+    }
 
-    /* Sección genérica */
-    section{padding:90px 0}
-    .section-head{text-align:center;margin-bottom:36px}
-    .title{font-family:Montserrat,Inter,sans-serif;font-size:36px;font-weight:800;color:#0f172a}
-    .subtitle{max-width:760px;margin:10px auto 0;color:#475569}
+    .media-card{
+      position:relative;
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid rgba(148,163,184,.12);
+      box-shadow:var(--shadow-hero);
+      background:#09111f;
+      transform:translateY(0);
+      transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+    }
+    .media-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 32px 70px rgba(2,6,23,.32);
+    }
+    .hero-video{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
+      object-position:center;
+    }
+    .media-badge{
+      position:absolute;
+      left:16px;
+      bottom:16px;
+      background:rgba(2,6,23,.72);
+      color:#e2e8f0;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:12px;
+      border:1px solid rgba(148,163,184,.28);
+      backdrop-filter:blur(8px);
+    }
 
-    /* Servicios */
-    .services{background:#f8fafc}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-top:28px}
-    .card{background:white;border:1px solid #e5e7eb;border-radius:18px;padding:0;box-shadow:0 8px 28px rgba(15,23,42,.08);position:relative;overflow:hidden}
+    /* Generic reveal */
+    .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .7s var(--ease), transform .7s var(--ease);
+    }
+    .reveal.is-visible{
+      opacity:1;
+      transform:none;
+    }
 
-    /* Nueva cabecera con icono circular */
-    .card-header{display:flex;align-items:center;gap:10px;padding:18px 20px;border-bottom:1px solid #eef2f7;background:#ffffff}
-    .icon-round{width:34px;height:34px;border-radius:999px;object-fit:cover;border:1px solid #e5e7eb;box-shadow:0 4px 14px rgba(15,23,42,.08)}
-    .card h3{font-size:18px;color:#0f172a;margin:0}
-    .card .body{padding:18px 20px}
-    .card .body p{color:#475569;font-size:14px}
-
-    /* Imagen vertical grande por categoría */
-    .vimg{position:relative;aspect-ratio:3/4;background:#f1f5f9;border-bottom:1px solid #eef2f7}
-    .vimg img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.05)}
-    /* placeholder bordeado cuando aún no hay imagen */
-    .vimg.placeholder{display:grid;place-items:center}
-    .vimg.placeholder::after{content:"Espacio para imagen vertical 3:4";color:#64748b;font-size:13px}
-
-    /* Transiciones modernas */
-    .card{transform:translateY(0);transition:transform .35s ease, box-shadow .35s ease}
-    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,.12)}
-    .vimg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(2,6,23,.35));opacity:0;transition:opacity .35s ease}
+    /* Services */
+    .services{
+      background:linear-gradient(180deg,#f8fafc 0%, #fbfcfd 100%);
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:22px;
+      margin-top:30px;
+    }
+    .card{
+      background:#fff;
+      border:1px solid #e7edf3;
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+      transform:translateY(0);
+      transition:transform .38s var(--ease), box-shadow .38s var(--ease), border-color .38s var(--ease);
+    }
+    .card:hover{
+      transform:translateY(-7px);
+      box-shadow:var(--shadow-card);
+      border-color:#d9e3ef;
+    }
+    .vimg{
+      position:relative;
+      aspect-ratio:3/4;
+      background:#f1f5f9;
+      border-bottom:1px solid #eef2f7;
+      overflow:hidden;
+    }
+    .vimg img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter:contrast(1.04);
+      transform:scale(1.02);
+      transition:transform .7s var(--ease);
+    }
+    .card:hover .vimg img{transform:scale(1.065)}
+    .vimg::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,transparent 56%,rgba(2,6,23,.34));
+      opacity:0;
+      transition:opacity .35s ease;
+    }
     .card:hover .vimg::after{opacity:1}
-    .vimg img{transform:scale(1.02);transition:transform .6s ease}
-    .card:hover .vimg img{transform:scale(1.06)}
 
-    /* Lista con bullets de icono circular */
-    .list{margin-top:12px}
-    .list li{font-size:14px;color:#334155;padding:8px 0;display:flex;gap:10px;border-bottom:1px dashed #e5e7f0;align-items:center}
+    .card-header{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:18px 20px;
+      border-bottom:1px solid #eef2f7;
+      background:#fff;
+    }
+    .icon-round{
+      width:34px;
+      height:34px;
+      border-radius:999px;
+      object-fit:cover;
+      border:1px solid #e5e7eb;
+      box-shadow:0 4px 14px rgba(15,23,42,.08);
+      flex:0 0 34px;
+    }
+    .card h3{
+      font-size:18px;
+      line-height:1.32;
+      color:var(--ink);
+    }
+    .card .body{
+      padding:18px 20px 20px;
+    }
+    .card .body p{
+      color:#475569;
+      font-size:14px;
+      line-height:1.68;
+    }
+    .list{
+      margin-top:14px;
+      list-style:none;
+    }
+    .list li{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:9px 0;
+      border-bottom:1px dashed #e6edf4;
+      color:#334155;
+      font-size:14px;
+      line-height:1.45;
+    }
     .list li:last-child{border-bottom:0}
-    .bullet{width:18px;height:18px;border-radius:999px;flex:0 0 18px;object-fit:cover;border:1px solid #e5e7eb}
-
+    .bullet{
+      width:18px;
+      height:18px;
+      border-radius:999px;
+      flex:0 0 18px;
+      object-fit:cover;
+      border:1px solid #e5e7eb;
+    }
     .more{margin-top:14px}
-    .more button{background:transparent;border:0;color:var(--blue-600);font-weight:700;cursor:pointer}
-    .expand{display:none;margin-top:12px;color:#475569;font-size:14px}
+    .more button{
+      background:transparent;
+      border:0;
+      color:var(--blue-600);
+      font-weight:700;
+      cursor:pointer;
+      font:inherit;
+      padding:0;
+      transition:color .2s ease;
+    }
+    .more button:hover{color:var(--blue-700)}
+    .expand{
+      display:none;
+      margin-top:12px;
+      color:#475569;
+      font-size:14px;
+      line-height:1.68;
+    }
 
-    /* Infografía proceso */
-    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
-    .step{background:linear-gradient(180deg,#f8fafc,#fff);border:1px solid #e5e7eb;border-radius:16px;padding:16px;text-align:center}
-    .step strong{display:block;font-size:18px;color:#0f172a}
-    .step span{display:block;color:#475569;font-size:13px;margin-top:6px}
+    /* Process */
+    .process-section{
+      background:#ffffff;
+      border-top:1px solid #eef2f7;
+      border-bottom:1px solid #eef2f7;
+      position:relative;
+    }
+    .process{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      margin-top:28px;
+    }
+    .step{
+      background:linear-gradient(180deg,#fbfcfe,#ffffff);
+      border:1px solid #e8edf3;
+      border-radius:20px;
+      padding:22px 18px;
+      text-align:center;
+      box-shadow:var(--shadow-soft);
+      transition:transform .3s ease, box-shadow .3s ease;
+    }
+    .step:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 34px rgba(15,23,42,.08);
+    }
+    .step-num{
+      width:40px;
+      height:40px;
+      border-radius:999px;
+      margin:0 auto 14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--blue),#5a90ff);
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 12px 24px rgba(17,88,216,.22);
+    }
+    .step strong{
+      display:block;
+      font-size:18px;
+      color:var(--ink);
+      line-height:1.3;
+    }
+    .step span{
+      display:block;
+      color:#475569;
+      font-size:14px;
+      margin-top:8px;
+      line-height:1.62;
+    }
 
-    /* Equipo */
-    .team{background:#f8fafc}
-    .team-banner{margin-top:16px;border-radius:18px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 10px 30px rgba(15,23,42,.08)}
-    .team-banner .wide-photo{width:100%;height:auto;aspect-ratio:16/6;min-height:360px;object-fit:cover;display:block}
-
-    /* Testimonios */
-    .carousel{position:relative;overflow:hidden}
-    .track{display:flex;transition:transform .6s ease}
-    .tcard{min-width:100%;padding:28px;background:#0f172a;color:#e5e7eb;border-radius:18px;min-height:480px;display:flex;flex-direction:column;justify-content:center}
-    .tcard .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .tcard .testimonial-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;border:1px solid rgba(148,163,184,.25);box-shadow:0 8px 24px rgba(2,6,23,.35)}
-    .dots{display:flex;gap:10px;justify-content:center;margin-top:14px}
-    .dot{width:10px;height:10px;border-radius:999px;background:#cbd5e1;opacity:.6;cursor:pointer}
-    .dot.active{opacity:1;background:#60a5fa}
-
-    /* Contacto */
-    .contact{background:linear-gradient(180deg,#f8fafc,#ffffff)}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
-    .contact-card{background:white;border:1px solid #e5e7eb;border-radius:18px;padding:22px}
-    .item{display:flex;gap:14px;align-items:flex-start;padding:12px;border:1px dashed #e5e7eb;border-radius:12px}
-    .item strong{display:block}
-    .badge{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid #bbf7d0;background:#ecfdf5;color:#065f46;font-size:12px;font-weight:700}
-    form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    label{font-weight:700;font-size:13px;color:#0f172a}
-    input,select,textarea{width:100%;margin-top:6px;border:1px solid #e5e7eb;border-radius:10px;padding:12px;font:inherit}
-    textarea{min-height:110px}
-    .submit{width:100%;margin-top:12px}
-
-    /* Sección Perfil (vertical) */
-    .founder{background:#0f172a;color:#e2e8f0}
-    .founder .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;align-items:center}
-    .portrait{aspect-ratio:3/4;border-radius:16px;overflow:hidden;border:1px solid rgba(148,163,184,.25);box-shadow:var(--shadow)}
-    .founder h3{font-family:Montserrat;font-size:28px}
-    .founder p{color:#cbd5e1}
-
-    /* Footer */
-    footer{background:#0b1020;color:#cbd5e1}
-    .fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px}
-    .fgrid h4{color:#93c5fd}
-    .legal{border-top:1px solid #1f2a44;margin-top:24px;padding:14px 0;color:#94a3b8;text-align:center}
-
-    /* UTILIDAD FULL-BLEED para imágenes horizontales a 100vw */
+    /* Team */
+    .team{
+      background:#f8fafc;
+      padding:48px 0 0;
+    }
+    .team .section-head{
+      margin-bottom:18px;
+    }
     .full-bleed{
       position:relative;
       left:50%;
@@ -171,108 +645,284 @@
       width:100vw;
       max-width:100vw;
     }
-    /* Overrides específicos para las fotos horizontales de equipo */
-    .team-banner.full-bleed{border-radius:0;border-left:none;border-right:none}
-    .team-banner.full-bleed .wide-photo{
+    .team-banner{
+      overflow:hidden;
+      border:1px solid #e5e7eb;
+      box-shadow:0 10px 30px rgba(15,23,42,.08);
+    }
+    .team-banner.full-bleed{
+      border-radius:0;
+      border-left:none;
+      border-right:none;
+    }
+    .team-banner .wide-photo{
       width:100%;
-      height:420px;          /* ajusta a gusto */
+      height:440px;
       object-fit:cover;
       display:block;
-      aspect-ratio:auto;     /* anula el 16/6 anterior */
-      min-height:unset;      /* anula min-height anterior */
+      transition:transform 1.3s var(--ease);
+    }
+    .team-banner:hover .wide-photo{
+      transform:scale(1.02);
+    }
+
+    /* Testimonials */
+    .carousel{
+      position:relative;
+      overflow:hidden;
+    }
+    .track{
+      display:flex;
+      transition:transform .7s var(--ease);
+    }
+    .tcard{
+      min-width:100%;
+      padding:30px;
+      background:linear-gradient(180deg,#0f172a,#111e35);
+      color:#e5e7eb;
+      border-radius:22px;
+      min-height:470px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      box-shadow:0 18px 40px rgba(2,6,23,.16);
+    }
+    .testimonial-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+    }
+    .testimonial-grid img{
+      width:100%;
+      height:auto;
+      aspect-ratio:auto;
+      object-fit:contain;
+      background:#0f172a;
+      border-radius:12px;
+      border:1px solid rgba(148,163,184,.24);
+      box-shadow:0 8px 24px rgba(2,6,23,.34);
+    }
+    .dots{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin-top:14px;
+    }
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      border:0;
+      background:#cbd5e1;
+      opacity:.55;
+      cursor:pointer;
+      transition:transform .2s ease, opacity .2s ease, background .2s ease;
+    }
+    .dot:hover{transform:scale(1.15)}
+    .dot.active{
+      opacity:1;
+      background:#60a5fa;
+    }
+
+    /* Contact */
+    .contact{
+      background:linear-gradient(180deg,#f8fafc,#ffffff);
+    }
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      margin-top:22px;
+    }
+    .contact-card{
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow-soft);
+    }
+    .item{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:12px;
+      border:1px dashed #e5e7eb;
+      border-radius:12px;
+    }
+    .item strong{display:block}
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--success-line);
+      background:var(--success);
+      color:var(--success-text);
+      font-size:12px;
+      font-weight:700;
+    }
+    form .row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    label{
+      display:block;
+      font-weight:700;
+      font-size:13px;
+      color:var(--ink);
+    }
+    input,select,textarea{
+      width:100%;
+      margin-top:6px;
+      border:1px solid #e5e7eb;
+      border-radius:10px;
+      padding:12px;
+      font:inherit;
+      color:var(--ink);
+      background:#fff;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input:focus,select:focus,textarea:focus{
+      outline:none;
+      border-color:#93c5fd;
+      box-shadow:0 0 0 4px rgba(17,88,216,.08);
+    }
+    textarea{min-height:110px}
+    .submit{width:100%;margin-top:12px}
+
+    /* Founder */
+    .founder{
+      background:linear-gradient(180deg,#0f172a,#111d32);
+      color:#e2e8f0;
+      position:relative;
+      overflow:hidden;
+    }
+    .founder::before{
+      content:"";
+      position:absolute;
+      right:-120px;
+      bottom:-120px;
+      width:360px;
+      height:360px;
+      border-radius:999px;
+      background:radial-gradient(circle at center, rgba(19,141,114,.16), transparent 66%);
+      pointer-events:none;
+    }
+    .founder .wrap{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:.82fr 1.18fr;
+      gap:30px;
+      align-items:center;
+    }
+    .portrait{
+      aspect-ratio:3/4;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(148,163,184,.22);
+      box-shadow:0 22px 42px rgba(2,6,23,.28);
+    }
+    .founder-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(17,88,216,.12);
+      border:1px solid rgba(96,165,250,.24);
+      color:#bfdbfe;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+    .founder h3{
+      font-family:Montserrat,Inter,sans-serif;
+      font-size:30px;
+      line-height:1.14;
+    }
+    .founder p{
+      color:#cbd5e1;
+      line-height:1.78;
+      font-size:16px;
+      margin:12px 0 0;
+      max-width:720px;
+    }
+
+    /* Footer */
+    footer{
+      background:#0b1020;
+      color:#cbd5e1;
+      padding:58px 0 0;
+    }
+    .fgrid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:24px;
+    }
+    .fgrid h4{
+      color:#93c5fd;
+      margin-bottom:8px;
+      font-size:15px;
+    }
+    .fgrid ul{list-style:none}
+    .fgrid li{margin-top:8px}
+    .fgrid a{
+      transition:color .2s ease, opacity .2s ease;
+    }
+    .fgrid a:hover{color:#fff}
+    .legal{
+      border-top:1px solid #1f2a44;
+      margin-top:24px;
+      padding:14px 0;
+      color:#94a3b8;
+      text-align:center;
+      font-size:14px;
     }
 
     /* Responsive */
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns:1fr;gap:24px;padding:70px 0}
+    @media (max-width:1100px){
+      .hero-grid{
+        grid-template-columns:1fr;
+        gap:26px;
+        padding:80px 0 70px;
+      }
+      .h1{max-width:none}
       .kpis{grid-template-columns:repeat(2,1fr)}
       .process{grid-template-columns:repeat(2,1fr)}
       .contact-grid{grid-template-columns:1fr}
       .founder .wrap{grid-template-columns:1fr}
       .fgrid{grid-template-columns:1fr 1fr}
-      .team-banner.full-bleed .wide-photo{height:320px}
+      .team-banner .wide-photo{height:320px}
     }
-    @media (max-width: 560px){
+
+    @media (max-width:820px){
+      .nav-links{display:none}
+      .menu-toggle{display:flex}
+      .brand-name{font-size:17px;white-space:normal}
+      .brand-sub{display:none}
+      .h1{font-size:42px}
+    }
+
+    @media (max-width:640px){
+      section{padding:56px 0}
       .title{font-size:30px}
       .h1{font-size:36px}
-      .nav-links{display:none}
-      .team-banner.full-bleed .wide-photo{height:240px}
+      .hero-copy p{font-size:17px}
+      .kpis{grid-template-columns:1fr 1fr}
+      .cards{grid-template-columns:1fr}
+      .process{grid-template-columns:1fr}
+      .testimonial-grid{grid-template-columns:1fr}
+      .tcard{padding:18px;min-height:auto}
+      form .row{grid-template-columns:1fr}
+      .fgrid{grid-template-columns:1fr}
+      .team-banner .wide-photo{height:240px}
+      .cta-row{flex-direction:column;align-items:stretch}
+      .btn{width:100%}
     }
-
-    /* --- HERO: video con proporción correcta --- */
-.hero-video{
-  width: 100%;
-  height: auto;              /* mantiene proporción del mp4/poster */
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(37,99,235,.15);
-}
-
-/* La tarjeta conserva su estilo y bordes; evitamos desbordes */
-.media-card{
-  overflow: hidden;
-}
-
-/* Desktop: agranda el área del video ajustando el grid (no el video) */
-@media (min-width: 1024px){
-  .container.hero-grid{
-    grid-template-columns: 0.9fr 1.1fr;   /* columna del video más ancha */
-  }
-  .hero-video{
-    max-height: 720px;       /* opcional: límite suave en monitores grandes */
-  }
-}
-
-
-
-/* --- VIDEO: proporción correcta y estilo --- */
-.hero-video{
-  width: 100%;                /* ocupa todo el ancho de su columna */
-  height: auto;               /* mantiene proporción original del mp4/poster */
-  display: block;
-  object-fit: cover;          /* recorta elegante si falta alto */
-  object-position: center;
-  border-radius: 20px;        /* borde redondeado en el video, no en la caja */
-  box-shadow: 0 10px 30px rgba(37,99,235,.15);
-}
-
-/* --- Desktop: hazlo más grande cambiando la proporción del grid, no el video --- */
-@media (min-width: 1024px){
-  .container.hero-grid{
-    grid-template-columns: 0.9fr 1.1fr; /* da más espacio a la columna del video */
-  }
-  /* Opcional: limita altura máxima si el monitor es muy alto */
-  .hero-video{
-    max-height: 720px;        /* quita si quieres que crezca más */
-  }
-}
-
-/* === TESTIMONIOS: optimizado para imágenes 551x368 (3:2) === */
-.tcard .testimonial-grid{
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 por fila (desktop) */
-  gap: 16px;
-}
-
-.tcard .testimonial-grid img{
-  width: 100%;
-  height: auto;       /* respeta el alto original */
-  aspect-ratio: auto; /* anula el 4/5 anterior */
-  object-fit: contain;/* no recorta; muestra completa la imagen */
-  background: #0f172a;/* relleno oscuro si sobran bandas */
-  border-radius: 12px;
-  border: 1px solid rgba(148,163,184,.25);
-}
-
-/* Móvil: 1 por fila */
-@media (max-width: 560px){
-  .tcard .testimonial-grid{ grid-template-columns: 1fr; }
-}
-
-    
-    
   </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -291,304 +941,346 @@
   </script>
 </head>
 <body>
-  <!-- Header -->
-  <header>
+  <header id="siteHeader">
     <div class="container nav">
       <a class="brand" href="#inicio" aria-label="Inicio C&A">
-        <img class="logo" src="images/logo.jpg" alt="Logo C&A" loading="lazy"/>
-        <div>
+        <img class="logo" src="images/logo.jpg" alt="Logo C&A" loading="lazy" />
+        <div class="brand-copy">
           <div class="brand-name">C&A – CLAVIJO Y ASOCIADOS</div>
           <div class="brand-sub">Desarrollo con Conciencia</div>
         </div>
       </a>
+
       <nav class="nav-links" aria-label="Navegación principal">
         <a href="#servicios">Servicios</a>
         <a href="#proceso">Proceso</a>
         <a href="#equipo">Equipo</a>
         <a href="#testimonios">Testimonios</a>
         <a href="#contacto">Contacto</a>
-        <a href="#perfil" class="cta-nav">Solicitar evaluación</a>
+        <a href="#contacto" class="cta-nav">Solicitar evaluación</a>
       </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-card">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#contacto" class="mobile-cta">Solicitar evaluación</a>
+      </div>
     </div>
   </header>
 
-  <!-- HERO -->
   <section id="inicio" class="hero">
     <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">Consultoría ambiental estratégica • 15+ años</span>
-        <h1 class="h1">Convertimos la gestión ambiental en <span class="accent">valor, solidez y sostenibilidad para tu empresa.</span>.</h1>
-        <p>Integramos cumplimiento regulatorio, protección de recursos y metas de sostenibilidad sin perder continuidad operativa. Rigor técnico + gestión ágil con autoridades.</p>
+      <div class="hero-copy reveal">
+        <span class="eyebrow-block">Consultoría ambiental estratégica • 15+ años</span>
+        <h1 class="h1">
+          Convertimos la gestión ambiental en
+          <span class="accent">valor, solidez y sostenibilidad para tu empresa.</span>
+        </h1>
+        <p>
+          Integramos cumplimiento regulatorio, protección de recursos y metas de sostenibilidad
+          sin perder continuidad operativa. Criterio técnico y gestión ágil con autoridades.
+        </p>
+
         <div class="kpis" aria-label="Métricas">
           <div class="kpi"><strong>100%</strong><span>Aprobaciones regulatorias</span></div>
           <div class="kpi"><strong>50+</strong><span>Proyectos ejecutados</span></div>
           <div class="kpi"><strong>24h</strong><span>Respuesta inicial garantizada</span></div>
           <div class="kpi"><strong>15+</strong><span>Años de experiencia</span></div>
         </div>
+
         <div class="cta-row">
           <a class="btn btn-primary" href="#contacto">📞 Solicitar evaluación</a>
-          <a class="btn btn-secondary" target="_blank" href="https://wa.me/593988125641?text=Hola%20C%26A%2C%20quisiera%20una%20evaluaci%C3%B3n%20inicial">💬 WhatsApp 24h</a>
+          <a
+            class="btn btn-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://wa.me/593988125641?text=Hola%20C%26A%2C%20quisiera%20una%20evaluaci%C3%B3n%20inicial"
+          >💬 WhatsApp 24h</a>
         </div>
       </div>
-   <div class="media-card" aria-label="Imagen/Vídeo representativo">
-  <video
-    src="images/hero.mp4"
-    poster="images/hero.jpg"
-    autoplay
-    muted
-    loop
-    playsinline
-    class="hero-video"></video>
-  <div class="media-badge">Desarrollo con Conciencia</div>
-</div>
 
-
+      <div class="media-card reveal" aria-label="Imagen o vídeo representativo">
+        <video
+          src="images/hero.mp4"
+          poster="images/hero.jpg"
+          autoplay
+          muted
+          loop
+          playsinline
+          class="hero-video"
+        ></video>
+        <div class="media-badge">Desarrollo con Conciencia</div>
+      </div>
     </div>
   </section>
 
-  <!-- SERVICIOS -->
   <section id="servicios" class="services">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal">
         <h2 class="title">Soluciones ambientales con impacto técnico y valor empresarial</h2>
-        <p class="subtitle">Del diagnóstico a la ejecución, combinamos técnica, normativa y analítica geoespacial para decisiones informadas y resultados medibles.</p>
+        <p class="subtitle">
+          Del diagnóstico a la ejecución, combinamos técnica, normativa y analítica geoespacial
+          para decisiones informadas y resultados medibles.
+        </p>
       </div>
 
       <div class="cards" role="list">
-        <!-- Regularización -->
-        <article class="card" role="listitem">
+        <article class="card reveal" role="listitem">
           <div class="vimg">
-  <img src="images/services/regularizacion-vertical.jpg" alt="Regularización y Cumplimiento Ambiental">
-</div>
-
+            <img src="images/services/regularizacion-vertical.jpg" alt="Regularización y Cumplimiento Ambiental" />
+          </div>
           <div class="card-header">
-            <img class="icon-round" src="images/icons/cumplimiento.jpg" alt="Icono Cumplimiento">
-            <div>
-              <h3>Regularización y Cumplimiento Ambiental</h3>
-            </div>
+            <img class="icon-round" src="images/icons/cumplimiento.jpg" alt="Icono Cumplimiento" />
+            <div><h3>Regularización y Cumplimiento Ambiental</h3></div>
           </div>
           <div class="body">
             <p>Estudios y permisos que viabilizan tu operación con respaldo técnico y normativo.</p>
             <ul class="list">
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> EsIA y Registros Ambientales</li>
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Auditorías e Informes de Cumplimiento</li>
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Planes de Manejo Ambiental</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> EsIA y Registros Ambientales</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Auditorías e Informes de Cumplimiento</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Planes de Manejo Ambiental</li>
             </ul>
-            <div class="more"><button data-expand="#s1">Más detalles ▾</button></div>
-            <div id="s1" class="expand">Acompañamiento técnico integral: términos de referencia, levantamiento de línea base, medidas, participación social y gestión con autoridades.</div>
+            <div class="more"><button type="button" data-expand="#s1">Más detalles ▾</button></div>
+            <div id="s1" class="expand">
+              Acompañamiento técnico integral: términos de referencia, levantamiento de línea base,
+              medidas, participación social y gestión con autoridades.
+            </div>
           </div>
         </article>
 
-        <!-- Residuos peligrosos -->
-        <article class="card" role="listitem">
-         <div class="vimg">
-  <img src="images/services/residuos-vertical.jpg" alt="Gestión de Residuos Peligrosos">
-</div>
+        <article class="card reveal" role="listitem">
+          <div class="vimg">
+            <img src="images/services/residuos-vertical.jpg" alt="Gestión de Residuos Peligrosos" />
+          </div>
           <div class="card-header">
-            <img class="icon-round" src="images/icons/residuos.jpg" alt="Icono Residuos">
-            <div>
-              <h3>Gestión Integral de Residuos Peligrosos</h3>
-            </div>
+            <img class="icon-round" src="images/icons/residuos.jpg" alt="Icono Residuos" />
+            <div><h3>Gestión Integral de Residuos Peligrosos</h3></div>
           </div>
           <div class="body">
             <p>Gestión integral del ciclo completo con trazabilidad y minimización de riesgos.</p>
             <ul class="list">
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Registro Generador y Declaración Anual</li>
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Planes de minimización y disposición final</li>
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Responsabilidad extendida (RAEE, llantas, pilas)</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Registro Generador y Declaración Anual</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Planes de minimización y disposición final</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Responsabilidad extendida (RAEE, llantas, pilas)</li>
             </ul>
-            <div class="more"><button data-expand="#s2">Más detalles ▾</button></div>
-            <div id="s2" class="expand">Diseño de rutas, contratos con gestores autorizados, indicadores de desempeño y cumplimiento MAATE.</div>
+            <div class="more"><button type="button" data-expand="#s2">Más detalles ▾</button></div>
+            <div id="s2" class="expand">
+              Diseño de rutas, contratos con gestores autorizados, indicadores de desempeño y cumplimiento MAATE.
+            </div>
           </div>
         </article>
 
-        <!-- Patrimonio y biodiversidad -->
-        <article class="card" role="listitem">
+        <article class="card reveal" role="listitem">
           <div class="vimg">
-  <img src="images/services/patrimonio-vertical.jpg" alt="Patrimonio Natural y Biodiversidad">
-</div>
-
+            <img src="images/services/patrimonio-vertical.jpg" alt="Patrimonio Natural y Biodiversidad" />
+          </div>
           <div class="card-header">
-            <img class="icon-round" src="images/icons/patrimonio.jpg" alt="Icono Patrimonio">
-            <div>
-              <h3>Patrimonio Natural y Biodiversidad</h3>
-            </div>
+            <img class="icon-round" src="images/icons/patrimonio.jpg" alt="Icono Patrimonio" />
+            <div><h3>Patrimonio Natural y Biodiversidad</h3></div>
           </div>
           <div class="body">
             <p>Gestionamos activos naturales con criterio técnico y visión territorial.</p>
             <ul class="list">
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> BVP: declaración y planes de manejo</li>
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Adjudicación de tierras en Patrimonio Forestal</li>
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Estudios de biodiversidad y conservación</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> BVP: declaración y planes de manejo</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Adjudicación de tierras en Patrimonio Forestal</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Estudios de biodiversidad y conservación</li>
             </ul>
-            <div class="more"><button data-expand="#s3">Más detalles ▾</button></div>
-            <div id="s3" class="expand">Inventarios y delimitaciones, salvaguardas, conectividad ecológica y medidas de compensación.</div>
+            <div class="more"><button type="button" data-expand="#s3">Más detalles ▾</button></div>
+            <div id="s3" class="expand">
+              Inventarios y delimitaciones, salvaguardas, conectividad ecológica y medidas de compensación.
+            </div>
           </div>
         </article>
 
-        <!-- Certificaciones -->
-        <article class="card" role="listitem">
-         <div class="vimg">
-  <img src="images/services/certificaciones-vertical.jpg" alt="Certificaciones y Programas">
-</div>
-
+        <article class="card reveal" role="listitem">
+          <div class="vimg">
+            <img src="images/services/certificaciones-vertical.jpg" alt="Certificaciones y Programas" />
+          </div>
           <div class="card-header">
-            <img class="icon-round" src="images/icons/certificaciones.jpg" alt="Icono Certificaciones">
-            <div>
-              <h3>Certificaciones y Programas</h3>
-            </div>
+            <img class="icon-round" src="images/icons/certificaciones.jpg" alt="Icono Certificaciones" />
+            <div><h3>Certificaciones y Programas</h3></div>
           </div>
           <div class="body">
-            <p>ortalece tu desempeño ambiental y proyección sostenible con estándares reconocidos.</p>
+            <p>Fortalece tu desempeño ambiental y proyección sostenible con estándares reconocidos.</p>
             <ul class="list">
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Punto Verde (MAATE)</li>
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Ecuador Carbono Cero</li>
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> GRECI / PGI</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Punto Verde (MAATE)</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Ecuador Carbono Cero</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> GRECI / PGI</li>
             </ul>
-            <div class="more"><button data-expand="#s4">Más detalles ▾</button></div>
-            <div id="s4" class="expand">Inventario GEI, huella de carbono, planes de reducción y evidencias para auditorías.</div>
+            <div class="more"><button type="button" data-expand="#s4">Más detalles ▾</button></div>
+            <div id="s4" class="expand">
+              Inventario GEI, huella de carbono, planes de reducción y evidencias para auditorías.
+            </div>
           </div>
         </article>
 
-        <!-- Monitoreos -->
-        <article class="card" role="listitem">
+        <article class="card reveal" role="listitem">
           <div class="vimg">
-  <img src="images/services/monitoreos-vertical.jpg" alt="Monitoreos Ambientales">
-</div>
-
+            <img src="images/services/monitoreos-vertical.jpg" alt="Monitoreos Ambientales" />
+          </div>
           <div class="card-header">
-            <img class="icon-round" src="images/icons/monitoreo.jpg" alt="Icono Monitoreo">
-            <div>
-              <h3>Monitoreos Ambientales</h3>
-            </div>
+            <img class="icon-round" src="images/icons/monitoreo.jpg" alt="Icono Monitoreo" />
+            <div><h3>Monitoreos Ambientales</h3></div>
           </div>
           <div class="body">
-            <p>Monitoreos confiables para verificar cumplimiento y sustentar decisiones</p>
+            <p>Monitoreos confiables para verificar cumplimiento y sustentar decisiones.</p>
             <ul class="list">
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Aire, agua, suelo, ruido y RNI</li>
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Emisiones industriales</li>
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Monitoreo de cumplimiento</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Aire, agua, suelo, ruido y RNI</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Emisiones industriales</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Monitoreo de cumplimiento</li>
             </ul>
-            <div class="more"><button data-expand="#s5">Más detalles ▾</button></div>
-            <div id="s5" class="expand">Protocolos, QA/QC y reportes claros para decisiones ejecutivas.</div>
+            <div class="more"><button type="button" data-expand="#s5">Más detalles ▾</button></div>
+            <div id="s5" class="expand">
+              Protocolos, QA/QC y reportes claros para decisiones ejecutivas.
+            </div>
           </div>
         </article>
 
-        <!-- SIG -->
-        <article class="card" role="listitem">
+        <article class="card reveal" role="listitem">
           <div class="vimg">
-  <img src="images/services/sig-vertical.jpg" alt="Sistemas de Información Geográfica">
-</div>
-
+            <img src="images/services/sig-vertical.jpg" alt="Sistemas de Información Geográfica" />
+          </div>
           <div class="card-header">
-            <img class="icon-round" src="images/icons/sig.jpg" alt="Icono SIG">
-            <div>
-              <h3>Sistemas de Información Geográfica</h3>
-            </div>
+            <img class="icon-round" src="images/icons/sig.jpg" alt="Icono SIG" />
+            <div><h3>Sistemas de Información Geográfica</h3></div>
           </div>
           <div class="body">
             <p>Analítica geoespacial para planificar, sustentar y comunicar decisiones.</p>
             <ul class="list">
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Mapas temáticos con ArcGIS Pro</li>
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Levantamientos y análisis espacial</li>
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Procesamiento de imágenes satelitales</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Mapas temáticos con ArcGIS Pro</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Levantamientos y análisis espacial</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Procesamiento de imágenes satelitales</li>
             </ul>
-            <div class="more"><button data-expand="#s6">Más detalles ▾</button></div>
-            <div id="s6" class="expand">Dashboards, story maps y reportes ejecutivos integrados a tus decisiones.</div>
-          </div>
-        </article>
-
-        <!-- Capacitaciones -->
-        <article class="card" role="listitem">
-         <div class="vimg">
-  <img src="images/services/capacitaciones-vertical.jpg" alt="Capacitaciones Especializadas">
-</div>
-
-          <div class="card-header">
-            <img class="icon-round" src="images/icons/capacitacion.jpg" alt="Icono Capacitación">
-            <div>
-              <h3>Capacitaciones Especializadas</h3>
+            <div class="more"><button type="button" data-expand="#s6">Más detalles ▾</button></div>
+            <div id="s6" class="expand">
+              Dashboards, story maps y reportes ejecutivos integrados a tus decisiones.
             </div>
           </div>
+        </article>
+
+        <article class="card reveal" role="listitem">
+          <div class="vimg">
+            <img src="images/services/capacitaciones-vertical.jpg" alt="Capacitaciones Especializadas" />
+          </div>
+          <div class="card-header">
+            <img class="icon-round" src="images/icons/capacitacion.jpg" alt="Icono Capacitación" />
+            <div><h3>Capacitaciones Especializadas</h3></div>
+          </div>
           <div class="body">
-            <p>Programas prácticos, actualizados y enfocados en resultados.</p>
+            <p>Programas prácticos, actualizados y enfocados en resultados aplicables.</p>
             <ul class="list">
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Gestión ambiental y residuos</li>
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> ArcGIS (ArcMap/Pro)</li>
-              <li><img class="bullet" src="images/icons/check.jpg" alt="•"> Cambio climático y normativa</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Gestión ambiental y residuos</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> ArcGIS (ArcMap/Pro)</li>
+              <li><img class="bullet" src="images/icons/check.jpg" alt="•" /> Cambio climático y normativa</li>
             </ul>
-            <div class="more"><button data-expand="#s7">Más detalles ▾</button></div>
-            <div id="s7" class="expand">Diseño a medida por sector, con evaluaciones y certificación interna.</div>
+            <div class="more"><button type="button" data-expand="#s7">Más detalles ▾</button></div>
+            <div id="s7" class="expand">
+              Diseño a medida por sector, con evaluación de aprendizaje y aplicación práctica.
+            </div>
           </div>
         </article>
       </div>
+    </div>
+  </section>
 
-      <!-- Proceso (infografía) -->
-      <div id="proceso" class="section-head" style="margin-top:40px">
+  <section id="proceso" class="process-section">
+    <div class="container">
+      <div class="section-head reveal">
         <h2 class="title">Cómo impulsamos tu gestión ambiental en 4 pasos</h2>
-        <p class="subtitle">Colaboramos contigo en un proceso estructurado que transforma los requerimientos ambientales en valor para tu negocio, asegurando el cumplimiento y la reputación corporativa.</p>
-        <div class="process" aria-label="Cómo impulsamos tu gestión ambiental en 4 pasos">
-          <div class="step"><strong>1. Diagnóstico inicial </strong><span>Identificamos tus necesidades y revisamos la situación actual para diseñar la solución más eficiente.</span></div>
-          <div class="step"><strong>2. Planificación estratégica</strong><span>Creamos un plan de trabajo y un cronograma alineados con tus metas operativas y de sostenibilidad.</span></div>
-          <div class="step"><strong>3. Implementación Ágil</strong><span>Ejecutamos los estudios y gestiones, asegurando cronogramas, hitos y métricas de desempeño.</span></div>
-          <div class="step"><strong>4. Resultados verificables y sostenibles </strong><span>Entregamos documentación final, permisos y licencias, garantizando continuidad y continuidad operativa.</span></div>
-        </div>
+        <p class="subtitle">
+          Colaboramos contigo en un proceso estructurado que transforma los requerimientos
+          ambientales en valor para tu organización, asegurando cumplimiento, control y sostenibilidad.
+        </p>
       </div>
+
+      <div class="process">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <strong>Diagnóstico inicial</strong>
+          <span>Identificamos tus necesidades y revisamos la situación actual para diseñar la solución más eficiente.</span>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">2</div>
+          <strong>Planificación estratégica</strong>
+          <span>Creamos un plan de trabajo y cronograma alineados con tus metas operativas y de sostenibilidad.</span>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">3</div>
+          <strong>Implementación ágil</strong>
+          <span>Ejecutamos los estudios y gestiones asegurando hitos, trazabilidad y métricas de desempeño.</span>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">4</div>
+          <strong>Resultados verificables y sostenibles</strong>
+          <span>Entregamos documentación final, permisos y licencias, fortaleciendo continuidad operativa y cumplimiento.</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- EQUIPO (placeholder de ejemplo) -->
   <section id="equipo" class="team">
     <div class="container">
-      <!-- Banner ANTES del título -->
-      <div class="team-banner full-bleed" style="margin-bottom:18px">
-        <!-- Reemplaza por tu foto panorámica superior -->
-        <img class="wide-photo" src="images/images_team_wide.jpg" alt="Equipo C&A – banner superior"/>
+      <div class="team-banner full-bleed reveal" style="margin-bottom:18px">
+        <img class="wide-photo" src="images/images_team_wide.jpg" alt="Equipo C&A – banner superior" />
       </div>
-      <div class="section-head">Nuestro equipo combina experiencia técnica y visión estratégica para acompañar a las empresas en sus desafíos ambientales con criterio, solidez y enfoque práctico. Desarrollamos soluciones confiables, bien sustentadas y alineadas a las necesidades reales de cada organización.
+
+      <div class="section-head reveal">
         <h2 class="title">Talento técnico para desafíos ambientales de alta exigencia</h2>
-        <p class="subtitle"></p>
+        <p class="subtitle">
+          Nuestro equipo combina experiencia técnica y visión estratégica para acompañar a las empresas
+          en sus desafíos ambientales con criterio, solidez y enfoque práctico. Desarrollamos soluciones
+          confiables, bien sustentadas y alineadas a las necesidades reales de cada organización.
+        </p>
       </div>
-      <!-- Banner DESPUÉS del texto del equipo (ya existente) -->
-      <div class="team-banner full-bleed">
-        <!-- Reemplaza por tu foto panorámica inferior -->
-        <img class="wide-photo" src="images/bosque_pano.JPG" alt="Equipo C&A en proyecto de campo"/>
+
+      <div class="team-banner full-bleed reveal">
+        <img class="wide-photo" src="images/bosque_pano.JPG" alt="Equipo C&A en proyecto de campo" />
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIOS -->
   <section id="testimonios">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal">
         <h2 class="title">Lo que dicen nuestros clientes</h2>
-        <p class="subtitle">Resultados medibles, gestión ágil con autoridades y enfoque práctico.</p>
+        <p class="subtitle">
+          Resultados medibles, gestión ágil con autoridades y soluciones aplicables a la realidad de cada proyecto.
+        </p>
       </div>
-      <div class="carousel" aria-roledescription="carousel" aria-label="Testimonios">
+
+      <div class="carousel reveal" aria-roledescription="carousel" aria-label="Testimonios">
         <div class="track" id="track">
-          <!-- Slide 1: 2 capturas -->
           <div class="tcard">
             <div class="testimonial-grid">
-              <img src="images/reviews/gmaps-1.jpg" alt="Reseña 1 Google Maps">
-              <img src="images/reviews/gmaps-2.jpg" alt="Reseña 2 Google Maps">
-                       </div>
+              <img src="images/reviews/gmaps-1.jpg" alt="Reseña 1 Google Maps" />
+              <img src="images/reviews/gmaps-2.jpg" alt="Reseña 2 Google Maps" />
+            </div>
           </div>
-          <!-- Slide 2: 2 capturas -->
+
           <div class="tcard">
             <div class="testimonial-grid">
-              <img src="images/reviews/gmaps-3.jpg" alt="Reseña 3 Google Maps">
-              <img src="images/reviews/gmaps-4.jpg" alt="Reseña 4 Google Maps">
-                     </div>
+              <img src="images/reviews/gmaps-3.jpg" alt="Reseña 3 Google Maps" />
+              <img src="images/reviews/gmaps-4.jpg" alt="Reseña 4 Google Maps" />
+            </div>
           </div>
-          <!-- Slide 3: 2 capturas -->
+
           <div class="tcard">
             <div class="testimonial-grid">
-              <img src="images/reviews/gmaps-5.jpg" alt="Reseña 5 Google Maps">
-              <img src="images/reviews/gmaps-6.jpg" alt="Reseña 6 Google Maps">
-                  </div>
+              <img src="images/reviews/gmaps-5.jpg" alt="Reseña 5 Google Maps" />
+              <img src="images/reviews/gmaps-6.jpg" alt="Reseña 6 Google Maps" />
+            </div>
           </div>
         </div>
+
         <div class="dots" role="tablist" aria-label="Paginación testimonios">
           <button class="dot active" aria-label="1" data-slide="0"></button>
           <button class="dot" aria-label="2" data-slide="1"></button>
@@ -598,39 +1290,49 @@
     </div>
   </section>
 
-  <!-- CONTACTO -->
   <section id="contacto" class="contact">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal">
         <h2 class="title">¿Listo para fortalecer la gestión ambiental de tu empresa?</h2>
         <p class="subtitle">Respuesta inicial en menos de <strong>24 horas</strong>. Hablemos.</p>
       </div>
+
       <div class="contact-grid">
-        <div class="contact-card">
+        <div class="contact-card reveal">
           <div class="item" style="margin-bottom:10px">
             <div>
               <strong>Correo</strong>
               <div><a href="mailto:ambiental.cya@gmail.com">ambiental.cya@gmail.com</a></div>
             </div>
           </div>
+
           <div class="item" style="margin-bottom:10px">
             <div>
               <strong>WhatsApp</strong>
-              <div><a target="_blank" href="https://wa.me/593988125641">+593 098 812 5641</a></div>
+              <div><a target="_blank" rel="noopener noreferrer" href="https://wa.me/593988125641">+593 098 812 5641</a></div>
             </div>
           </div>
+
           <div class="item" style="margin-bottom:10px">
             <div>
               <strong>Ubicación</strong>
               <div>Quito, Ecuador</div>
             </div>
           </div>
+
           <div class="badge">⏰ Respuesta en 24h garantizada</div>
+
           <div style="margin-top:14px">
-            <img src="images/map-lite.jpg" alt="Mapa referencial Quito" loading="lazy" style="border-radius:12px;border:1px solid #e5e7eb"/>
+            <img
+              src="images/map-lite.jpg"
+              alt="Mapa referencial Quito"
+              loading="lazy"
+              style="border-radius:12px;border:1px solid #e5e7eb"
+            />
           </div>
         </div>
-        <form class="contact-card" id="form">
+
+        <form class="contact-card reveal" id="form">
           <div class="row">
             <div>
               <label for="nombre">Nombre completo *</label>
@@ -641,6 +1343,7 @@
               <input id="empresa" name="empresa" required />
             </div>
           </div>
+
           <div class="row">
             <div>
               <label for="email">Email *</label>
@@ -651,6 +1354,7 @@
               <input id="telefono" name="telefono" />
             </div>
           </div>
+
           <div class="row">
             <div>
               <label for="servicio">Servicio de interés</label>
@@ -666,6 +1370,7 @@
                 <option>Otro</option>
               </select>
             </div>
+
             <div>
               <label for="origen">¿Cómo nos conociste?</label>
               <select id="origen" name="origen">
@@ -677,46 +1382,61 @@
               </select>
             </div>
           </div>
+
           <div>
             <label for="mensaje">Mensaje</label>
             <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu necesidad o proyecto..."></textarea>
           </div>
+
           <button class="btn btn-primary submit" type="submit">📤 Enviar solicitud</button>
-          <p style="font-size:12px;color:#64748b;margin-top:8px">Al enviar este formulario aceptas ser contactado por C&A para fines de consultoría.</p>
+          <p style="font-size:12px;color:#64748b;margin-top:8px">
+            Al enviar este formulario aceptas ser contactado por C&A para fines de consultoría.
+          </p>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- PERFIL / FOTO VERTICAL + RESUMEN -->
   <section id="perfil" class="founder">
     <div class="container wrap">
-      <div class="portrait">
-        <img src="images/stalin-vertical.jpg" alt="Stalin Clavijo – Consultor Ambiental"/>
+      <div class="portrait reveal">
+        <img src="images/stalin-vertical.jpg" alt="Stalin Clavijo – Director Técnico" />
       </div>
-      <div>
-        <h3>Ing. Stalin Clavijo | Director Técnico  </h3>
-        <p style="margin:10px 0 14px">Lidera la dirección técnica de Clavijo y Asociados, integrando experiencia en cumplimiento normativo, patrimonio natural y sistemas de información geográfica para impulsar soluciones ambientales sólidas, bien sustentadas y alineadas a los objetivos operativos y de sostenibilidad de cada organización.</p>
 
-        <div class="cta-row" style="margin-top:14px">
+      <div class="reveal">
+        <span class="founder-tag">Dirección técnica de la firma</span>
+        <h3>Ing. Stalin Clavijo | Director Técnico</h3>
+        <p>
+          Lidera la dirección técnica de Clavijo y Asociados, integrando experiencia en cumplimiento
+          normativo, patrimonio natural y sistemas de información geográfica para impulsar soluciones
+          ambientales sólidas, bien sustentadas y alineadas a los objetivos operativos y de sostenibilidad
+          de cada organización.
+        </p>
+
+        <div class="cta-row" style="margin-top:18px">
           <a class="btn btn-primary" href="mailto:ambiental.cya@gmail.com">Contactar por correo</a>
-          <a class="btn btn-secondary" target="_blank" href="https://wa.me/593988125641?text=Hola%2C%20me%20gustar%C3%ADa%20coordinar%20una%20reuni%C3%B3n">Agendar por WhatsApp</a>
+          <a
+            class="btn btn-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://wa.me/593988125641?text=Hola%2C%20me%20gustar%C3%ADa%20coordinar%20una%20reuni%C3%B3n"
+          >Agendar por WhatsApp</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="fgrid">
         <div>
-          <img src="images/logo.jpg" alt="C&A" style="width:40px;height:40px;border-radius:10px;margin-bottom:10px"/>
+          <img src="images/logo.jpg" alt="C&A" style="width:40px;height:40px;border-radius:10px;margin-bottom:10px" />
           <p>Soluciones ambientales con enfoque técnico y estratégico. Cumplir, sostener y crecer con solidez.</p>
         </div>
+
         <div>
           <h4>Servicios</h4>
-          <ul style="list-style:none;margin-top:8px">
+          <ul>
             <li><a href="#servicios">Cumplimiento</a></li>
             <li><a href="#servicios">Residuos</a></li>
             <li><a href="#servicios">Patrimonio</a></li>
@@ -725,35 +1445,64 @@
             <li><a href="#servicios">SIG y Capacitaciones</a></li>
           </ul>
         </div>
+
         <div>
           <h4>Empresa</h4>
-          <ul style="list-style:none;margin-top:8px">
+          <ul>
             <li><a href="#equipo">Equipo</a></li>
             <li><a href="#testimonios">Testimonios</a></li>
             <li><a href="#contacto">Contacto</a></li>
             <li><a href="#perfil">Perfil</a></li>
           </ul>
         </div>
+
         <div>
           <h4>Contacto</h4>
-          <ul style="list-style:none;margin-top:8px">
+          <ul>
             <li>📧 <a href="mailto:ambiental.cya@gmail.com">ambiental.cya@gmail.com</a></li>
-            <li>📱 <a href="https://wa.me/593988125641" target="_blank">+593 098 812 5641</a></li>
+            <li>📱 <a href="https://wa.me/593988125641" target="_blank" rel="noopener noreferrer">+593 098 812 5641</a></li>
             <li>📍 Quito, Ecuador</li>
           </ul>
         </div>
       </div>
+
       <div class="legal">© <span id="y"></span> C&A – Clavijo y Asociados. Todos los derechos reservados.</div>
     </div>
   </footer>
 
   <script>
-    // año dinámico
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Expansión de "Más detalles"
-    document.querySelectorAll('[data-expand]').forEach(btn=>{
-      btn.addEventListener('click',()=>{
+    const siteHeader = document.getElementById('siteHeader');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function handleHeader(){
+      if(window.scrollY > 12){
+        siteHeader.classList.add('scrolled');
+      }else{
+        siteHeader.classList.remove('scrolled');
+      }
+    }
+    handleHeader();
+    window.addEventListener('scroll', handleHeader);
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('open', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.querySelectorAll('[data-expand]').forEach(btn => {
+      btn.addEventListener('click', () => {
         const sel = btn.getAttribute('data-expand');
         const box = document.querySelector(sel);
         const isOpen = box.style.display === 'block';
@@ -762,42 +1511,70 @@
       });
     });
 
-    // Carrusel testimonios
     const track = document.getElementById('track');
     const dots = document.querySelectorAll('.dot');
-    function go(i){
-      track.style.transform = `translateX(${-100*i}%)`;
-      dots.forEach((d,idx)=>d.classList.toggle('active', idx===i));
-    }
-    dots.forEach(d=>d.addEventListener('click',()=>go(parseInt(d.dataset.slide))));
-    let idx=0; setInterval(()=>{idx=(idx+1)%3; go(idx)}, 5000);
+    let idx = 0;
+    let autoplay = null;
 
-    // Formulario -> WhatsApp + fallback mailto
-    document.getElementById('form').addEventListener('submit', (e)=>{
+    function go(i){
+      track.style.transform = `translateX(${-100 * i}%)`;
+      dots.forEach((d, dotIdx) => d.classList.toggle('active', dotIdx === i));
+      idx = i;
+    }
+
+    function startCarousel(){
+      autoplay = setInterval(() => {
+        idx = (idx + 1) % 3;
+        go(idx);
+      }, 5000);
+    }
+
+    function stopCarousel(){
+      if(autoplay) clearInterval(autoplay);
+    }
+
+    dots.forEach(d => {
+      d.addEventListener('click', () => {
+        stopCarousel();
+        go(parseInt(d.dataset.slide, 10));
+        startCarousel();
+      });
+    });
+
+    startCarousel();
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    document.getElementById('form').addEventListener('submit', (e) => {
       e.preventDefault();
       const data = Object.fromEntries(new FormData(e.target).entries());
-      const msg = `Solicitud de evaluación – C&A\n\n`+
-      `👤 Nombre: ${data.nombre}\n`+
-      `🏢 Empresa: ${data.empresa}\n`+
-      `📧 Email: ${data.email}\n`+
-      `📱 Teléfono: ${data.telefono || 'No indicado'}\n`+
-      `🎯 Servicio: ${data.servicio || 'No especificado'}\n`+
-      `🧭 Origen: ${data.origen || 'No indicado'}\n\n`+
-      `💬 Mensaje:\n${data.mensaje || '—'}`;
+
+      const msg =
+        `Solicitud de evaluación – C&A\n\n` +
+        `👤 Nombre: ${data.nombre}\n` +
+        `🏢 Empresa: ${data.empresa}\n` +
+        `📧 Email: ${data.email}\n` +
+        `📱 Teléfono: ${data.telefono || 'No indicado'}\n` +
+        `🎯 Servicio: ${data.servicio || 'No especificado'}\n` +
+        `🧭 Origen: ${data.origen || 'No indicado'}\n\n` +
+        `💬 Mensaje:\n${data.mensaje || '—'}`;
+
       const wa = `https://wa.me/593988125641?text=${encodeURIComponent(msg)}`;
       window.open(wa, '_blank');
-      setTimeout(()=>{
-        window.location.href = `mailto:ambiental.cya@gmail.com?subject=Solicitud%20de%20evaluaci%C3%B3n&body=${encodeURIComponent(msg)}`;
-      }, 500);
     });
   </script>
 </body>
 </html>
-
-
-
-
-
 
 
 
