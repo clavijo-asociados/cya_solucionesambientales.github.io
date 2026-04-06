@@ -1014,11 +1014,12 @@
         <div class="cta-row">
           <a class="btn btn-primary" href="#contacto">📞 Solicitar evaluación</a>
           <a
-            class="btn btn-secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://wa.me/593988125641?text=Hola%20C%26A%2C%20quisiera%20una%20evaluaci%C3%B3n%20inicial"
-          >💬 WhatsApp 24h</a>
+  class="btn btn-secondary"
+  target="_blank"
+  rel="noopener noreferrer"
+  href="https://wa.me/593988125641?text=Hola%20C%26A%2C%20quisiera%20una%20evaluaci%C3%B3n%20inicial"
+  onclick="gtag('event', 'click_whatsapp', { event_category: 'contacto', event_label: 'hero_whatsapp_24h' });"
+>💬 WhatsApp 24h</a>
         </div>
       </div>
 
@@ -1323,7 +1324,12 @@
           <div class="item" style="margin-bottom:10px">
             <div>
               <strong>WhatsApp</strong>
-              <div><a target="_blank" rel="noopener noreferrer" href="https://wa.me/593988125641">+593 098 812 5641</a></div>
+              <div><a
+  target="_blank"
+  rel="noopener noreferrer"
+  href="https://wa.me/593988125641"
+  onclick="gtag('event', 'click_whatsapp', { event_category: 'contacto', event_label: 'contacto_whatsapp_numero' });"
+>+593 098 812 5641</a></div>
             </div>
           </div>
 
@@ -1429,12 +1435,13 @@
 
         <div class="cta-row" style="margin-top:18px">
           <a class="btn btn-primary" href="mailto:ambiental.cya@gmail.com">Contactar por correo</a>
-          <a
-            class="btn btn-secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://wa.me/593988125641?text=Hola%2C%20me%20gustar%C3%ADa%20coordinar%20una%20reuni%C3%B3n"
-          >Agendar por WhatsApp</a>
+        <a
+  class="btn btn-secondary"
+  target="_blank"
+  rel="noopener noreferrer"
+  href="https://wa.me/593988125641?text=Hola%2C%20me%20gustar%C3%ADa%20coordinar%20una%20reuni%C3%B3n"
+  onclick="gtag('event', 'click_whatsapp', { event_category: 'contacto', event_label: 'perfil_agendar_whatsapp' });"
+>Agendar por WhatsApp</a>
         </div>
       </div>
     </div>
